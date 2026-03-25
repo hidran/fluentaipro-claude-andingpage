@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pricing v2</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #0a0a0f; color: white; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; padding: 64px; }
+
+  .section-label {
+    font-size: 13px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase;
+    background: linear-gradient(135deg,#7c3aed,#06b6d4);
+    -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+    margin-bottom: 16px; text-align: center;
+  }
+  .section-title { font-size: 46px; font-weight: 800; letter-spacing: -1.5px; line-height: 1.05; color: #fff; margin-bottom: 14px; text-align: center; }
+  .section-subtitle { font-size: 18px; color: rgba(255,255,255,0.6); line-height: 1.65; margin-bottom: 36px; text-align: center; }
+
+  /* Toggle */
+  .toggle-wrapper {
+    display: flex; align-items: center; justify-content: center;
+    gap: 14px; margin-bottom: 52px;
+  }
+  .toggle-label { font-size: 15px; color: rgba(255,255,255,0.55); }
+  .toggle-label.active { color: white; font-weight: 600; }
+  .toggle {
+    width: 52px; height: 28px; background: linear-gradient(135deg,#7c3aed,#06b6d4);
+    border-radius: 14px; position: relative; cursor: pointer;
+  }
+  .toggle-knob {
+    position: absolute; top: 3px; right: 3px;
+    width: 22px; height: 22px; background: white; border-radius: 50%;
+  }
+  .save-badge {
+    background: rgba(6,182,212,0.15);
+    border: 1px solid rgba(6,182,212,0.4);
+    color: #06b6d4; font-size: 12px; font-weight: 600;
+    padding: 3px 10px; border-radius: 20px;
+  }
+
+  /* Cards */
+  .pricing-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 20px; max-width: 960px; margin: 0 auto; align-items: start;
+  }
+  .pricing-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 18px; padding: 34px;
+    position: relative;
+  }
+  .pricing-card.featured {
+    background: rgba(124,58,237,0.1);
+    border-color: rgba(124,58,237,0.55);
+    transform: scale(1.04);
+  }
+  .popular-badge {
+    position: absolute; top: -14px; left: 50%; transform: translateX(-50%);
+    background: linear-gradient(135deg,#7c3aed,#06b6d4);
+    color: white; font-size: 11px; font-weight: 700;
+    padding: 4px 16px; border-radius: 20px; white-space: nowrap; letter-spacing: 1px;
+  }
+
+  .plan-icon { font-size: 28px; margin-bottom: 14px; }
+  .plan-name { font-size: 20px; font-weight: 700; color: white; margin-bottom: 6px; }
+  .plan-desc { font-size: 14px; color: rgba(255,255,255,0.5); margin-bottom: 22px; }
+
+  .plan-price-block { margin-bottom: 8px; }
+  .plan-price { font-size: 46px; font-weight: 800; color: white; line-height: 1; }
+  .plan-price .currency { font-size: 24px; font-weight: 600; vertical-align: super; }
+  .plan-price .period { font-size: 16px; font-weight: 400; color: rgba(255,255,255,0.4); }
+  .plan-price-yearly {
+    font-size: 13px; color: rgba(255,255,255,0.4); margin-bottom: 24px;
+  }
+  .plan-price-yearly strong { color: #06b6d4; }
+
+  .divider { border: none; border-top: 1px solid rgba(255,255,255,0.07); margin: 20px 0; }
+
+  .plan-features { list-style: none; margin-bottom: 28px; }
+  .plan-features li {
+    font-size: 14px; color: rgba(255,255,255,0.7);
+    padding: 7px 0; display: flex; align-items: center; gap: 9px;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+  }
+  .plan-features li .check { color: #06b6d4; font-weight: 700; font-size: 13px; }
+  .plan-features li.muted { color: rgba(255,255,255,0.3); }
+  .plan-features li.muted .check { color: rgba(255,255,255,0.15); }
+
+  .btn-plan {
+    display: block; text-align: center; padding: 14px;
+    border-radius: 10px; font-size: 15px; font-weight: 600;
+    text-decoration: none; border: 1px solid rgba(255,255,255,0.14);
+    background: rgba(255,255,255,0.07); color: rgba(255,255,255,0.8);
+  }
+  .btn-plan.primary {
+    background: linear-gradient(135deg,#7c3aed,#06b6d4);
+    color: white; border: none;
+    box-shadow: 0 0 30px rgba(124,58,237,0.4);
+  }
+</style>
+</head>
+<body>
+
+<div class="section-label">Simple pricing</div>
+<h2 class="section-title">Start free, grow at your pace</h2>
+<p class="section-subtitle">No credit card required. Cancel anytime.</p>
+
+<!-- Toggle: showing Yearly selected -->
+<div class="toggle-wrapper">
+  <span class="toggle-label">Monthly</span>
+  <div class="toggle"><div class="toggle-knob"></div></div>
+  <span class="toggle-label active">Yearly</span>
+  <span class="save-badge">Save 20%</span>
+</div>
+
+<div class="pricing-grid">
+
+  <!-- Free -->
+  <div class="pricing-card">
+    <div class="plan-icon">🌱</div>
+    <div class="plan-name">Free</div>
+    <div class="plan-desc">Try it out, no strings attached</div>
+    <div class="plan-price-block">
+      <div class="plan-price"><span class="currency">€</span>0<span class="period"> / mo</span></div>
+    </div>
+    <div class="plan-price-yearly">Forever free</div>
+    <hr class="divider">
+    <ul class="plan-features">
+      <li><span class="check">✓</span> 1 language</li>
+      <li><span class="check">✓</span> 10 AI conversations / month</li>
+      <li><span class="check">✓</span> Basic pronunciation feedback</li>
+      <li class="muted"><span class="check">–</span> Adaptive learning path</li>
+      <li class="muted"><span class="check">–</span> Unlimited conversations</li>
+      <li class="muted"><span class="check">–</span> Progress analytics</li>
+    </ul>
+    <a href="#" class="btn-plan">Get started free</a>
+  </div>
+
+  <!-- Silver (featured) -->
+  <div class="pricing-card featured">
+    <div class="popular-badge">Most Popular</div>
+    <div class="plan-icon">🥈</div>
+    <div class="plan-name">Silver</div>
+    <div class="plan-desc">For committed language learners</div>
+    <div class="plan-price-block">
+      <div class="plan-price"><span class="currency">€</span>10.39<span class="period"> / mo</span></div>
+    </div>
+    <div class="plan-price-yearly">€124.70 / year · <strong>Save €24.90 vs monthly</strong></div>
+    <hr class="divider">
+    <ul class="plan-features">
+      <li><span class="check">✓</span> 3 languages</li>
+      <li><span class="check">✓</span> Unlimited AI conversations</li>
+      <li><span class="check">✓</span> Advanced pronunciation feedback</li>
+      <li><span class="check">✓</span> Adaptive learning path</li>
+      <li><span class="check">✓</span> Progress analytics</li>
+      <li class="muted"><span class="check">–</span> Priority support</li>
+    </ul>
+    <a href="#" class="btn-plan primary">Start for free →</a>
+  </div>
+
+  <!-- Gold -->
+  <div class="pricing-card">
+    <div class="plan-icon">🥇</div>
+    <div class="plan-name">Gold</div>
+    <div class="plan-desc">All languages, full power</div>
+    <div class="plan-price-block">
+      <div class="plan-price"><span class="currency">€</span>19.99<span class="period"> / mo</span></div>
+    </div>
+    <div class="plan-price-yearly">€239.88 / year · <strong>Save €59.90 vs monthly</strong></div>
+    <hr class="divider">
+    <ul class="plan-features">
+      <li><span class="check">✓</span> All 50+ languages</li>
+      <li><span class="check">✓</span> Unlimited AI conversations</li>
+      <li><span class="check">✓</span> Advanced pronunciation feedback</li>
+      <li><span class="check">✓</span> Adaptive learning path</li>
+      <li><span class="check">✓</span> Progress analytics</li>
+      <li><span class="check">✓</span> Priority support</li>
+    </ul>
+    <a href="#" class="btn-plan">Get started</a>
+  </div>
+
+</div>
+</body>
+</html>

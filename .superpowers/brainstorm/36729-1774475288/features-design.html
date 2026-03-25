@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Features Design</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #0a0a0f; color: white; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+
+  .page-label {
+    text-align: center;
+    padding: 12px;
+    background: rgba(255,255,255,0.05);
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .section {
+    padding: 90px 64px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    background: linear-gradient(135deg,#7c3aed,#06b6d4);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 14px;
+  }
+
+  .section-title {
+    font-size: 44px;
+    font-weight: 800;
+    letter-spacing: -1.2px;
+    line-height: 1.1;
+    color: white;
+    margin-bottom: 16px;
+  }
+
+  .section-subtitle {
+    font-size: 17px;
+    color: rgba(255,255,255,0.45);
+    max-width: 480px;
+    line-height: 1.6;
+    margin-bottom: 60px;
+  }
+
+  /* Feature cards grid */
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .feature-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 16px;
+    padding: 28px 30px;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.2s;
+  }
+  .feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(124,58,237,0.5), transparent);
+  }
+  .feature-card.wide {
+    grid-column: span 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    align-items: center;
+  }
+
+  .feature-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    background: rgba(124,58,237,0.15);
+    border: 1px solid rgba(124,58,237,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    margin-bottom: 18px;
+  }
+  .feature-icon.cyan { background: rgba(6,182,212,0.12); border-color: rgba(6,182,212,0.3); }
+
+  .feature-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 8px;
+  }
+  .feature-desc {
+    font-size: 14px;
+    color: rgba(255,255,255,0.45);
+    line-height: 1.6;
+  }
+
+  /* Wide card visual mockup */
+  .conversation-mockup {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 12px;
+    padding: 16px;
+  }
+  .chat-bubble {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 12px;
+    align-items: flex-start;
+  }
+  .avatar {
+    width: 28px; height: 28px; border-radius: 50%;
+    background: linear-gradient(135deg,#7c3aed,#06b6d4);
+    flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 11px; font-weight: 700;
+  }
+  .bubble {
+    background: rgba(124,58,237,0.15);
+    border-radius: 0 10px 10px 10px;
+    padding: 8px 12px;
+    font-size: 12px;
+    color: rgba(255,255,255,0.8);
+    max-width: 200px;
+  }
+  .bubble.user {
+    background: rgba(6,182,212,0.12);
+    border-radius: 10px 0 10px 10px;
+    margin-left: auto;
+  }
+  .chat-row-user { flex-direction: row-reverse; }
+  .pronunciation-bar {
+    margin-top: 10px;
+    padding: 8px 12px;
+    background: rgba(255,255,255,0.04);
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.07);
+  }
+  .pron-label { font-size: 10px; color: rgba(255,255,255,0.35); margin-bottom: 5px; }
+  .pron-row { display: flex; align-items: center; gap: 8px; margin-bottom: 4px; }
+  .pron-word { font-size: 11px; color: rgba(255,255,255,0.6); width: 60px; }
+  .pron-track { flex: 1; height: 4px; background: rgba(255,255,255,0.08); border-radius: 2px; overflow: hidden; }
+  .pron-fill { height: 100%; border-radius: 2px; }
+  .pron-score { font-size: 10px; color: rgba(255,255,255,0.4); width: 28px; text-align: right; }
+</style>
+</head>
+<body>
+<div class="page-label">Features section preview</div>
+
+<div class="section">
+  <div class="section-label">What you get</div>
+  <h2 class="section-title">Everything you need<br>to truly learn a language</h2>
+  <p class="section-subtitle">Not just flashcards. Real AI-powered practice that mirrors how humans actually learn to speak.</p>
+
+  <div class="features-grid">
+
+    <!-- Wide card: AI Conversations + Pronunciation -->
+    <div class="feature-card wide">
+      <div>
+        <div class="feature-icon">🤖</div>
+        <div class="feature-title">Conversational AI Tutors</div>
+        <div class="feature-desc">Practice real dialogues with AI tutors that respond naturally, correct your mistakes in context, and never get tired of your questions.</div>
+      </div>
+      <div class="conversation-mockup">
+        <div class="chat-bubble">
+          <div class="avatar">AI</div>
+          <div class="bubble">¿Cómo estuvo tu fin de semana? Cuéntame algo interesante.</div>
+        </div>
+        <div class="chat-bubble chat-row-user">
+          <div class="avatar" style="background:linear-gradient(135deg,#06b6d4,#0ea5e9)">Me</div>
+          <div class="bubble user">Fui al mercado con mi familia.</div>
+        </div>
+        <div class="chat-bubble">
+          <div class="avatar">AI</div>
+          <div class="bubble">¡Genial! Try using 'estuve' instead of 'fui' here for better flow.</div>
+        </div>
+        <div class="pronunciation-bar">
+          <div class="pron-label">Pronunciation score</div>
+          <div class="pron-row">
+            <div class="pron-word">mercado</div>
+            <div class="pron-track"><div class="pron-fill" style="width:88%;background:linear-gradient(90deg,#7c3aed,#06b6d4)"></div></div>
+            <div class="pron-score">88%</div>
+          </div>
+          <div class="pron-row">
+            <div class="pron-word">familia</div>
+            <div class="pron-track"><div class="pron-fill" style="width:95%;background:linear-gradient(90deg,#7c3aed,#06b6d4)"></div></div>
+            <div class="pron-score">95%</div>
+          </div>
+          <div class="pron-row">
+            <div class="pron-word">estuve</div>
+            <div class="pron-track"><div class="pron-fill" style="width:72%;background:linear-gradient(90deg,#f59e0b,#ef4444)"></div></div>
+            <div class="pron-score">72%</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card: Real-time Pronunciation -->
+    <div class="feature-card">
+      <div class="feature-icon cyan">🎙️</div>
+      <div class="feature-title">Real-Time Pronunciation Feedback</div>
+      <div class="feature-desc">Speech recognition scores every word you say, highlights problem areas, and guides your mouth placement. No more guessing.</div>
+    </div>
+
+    <!-- Card: Personalized Paths -->
+    <div class="feature-card">
+      <div class="feature-icon">🗺️</div>
+      <div class="feature-title">Adaptive Learning Paths</div>
+      <div class="feature-desc">Your path adjusts to your pace, goals, and weak spots — whether you're a beginner or brushing up on business vocabulary.</div>
+    </div>
+
+    <!-- Card: 50+ Languages -->
+    <div class="feature-card">
+      <div class="feature-icon cyan">🌍</div>
+      <div class="feature-title">50+ Languages</div>
+      <div class="feature-desc">From Spanish, French, and Mandarin to Swahili, Hindi, and Dutch — with native speaker voice models for every dialect.</div>
+    </div>
+
+    <!-- Card: Web + Mobile -->
+    <div class="feature-card">
+      <div class="feature-icon">📱</div>
+      <div class="feature-title">Web & Mobile, Seamlessly</div>
+      <div class="feature-desc">Practice on your laptop at home and continue on your phone on the go. Progress syncs instantly across all your devices.</div>
+    </div>
+
+  </div>
+</div>
+</body>
+</html>

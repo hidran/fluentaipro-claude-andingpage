@@ -1,0 +1,20 @@
+{"type":"server-started","port":63481,"host":"127.0.0.1","url_host":"localhost","url":"http://localhost:63481","screen_dir":"/Users/hidranarias/projects/ai/claude-code/landing-page/.superpowers/brainstorm/36729-1774475288"}
+{"type":"screen-added","file":"/Users/hidranarias/projects/ai/claude-code/landing-page/.superpowers/brainstorm/36729-1774475288/sections.html"}
+{"source":"user-event","type":"click","text":"1\n    \n      Hero\n      Headline, tagline, and \"Start for free\" CTA above the fold","choice":"hero","id":null,"timestamp":1774475439907}
+{"source":"user-event","type":"click","text":"2\n    \n      Features / How it works\n      AI tutors, pronunciation feedback, personalized paths, 50+ languages","choice":"features","id":null,"timestamp":1774475442416}
+{"source":"user-event","type":"click","text":"3\n    \n      Social proof / Testimonials\n      User quotes, star ratings, or usage stats (\"50k+ learners\")","choice":"social-proof","id":null,"timestamp":1774475444871}
+{"source":"user-event","type":"click","text":"4\n    \n      Pricing\n      Free tier vs paid plans","choice":"pricing","id":null,"timestamp":1774475446863}
+{"source":"user-event","type":"click","text":"5\n    \n      Language showcase\n      Visual grid or globe showing the 50+ supported languages","choice":"languages","id":null,"timestamp":1774475451385}
+{"source":"user-event","type":"click","text":"6\n    \n      App demo / Screenshots\n      Phone mockups or screen recordings showing the product in action","choice":"demo","id":null,"timestamp":1774475454206}
+{"source":"user-event","type":"click","text":"7\n    \n      FAQ\n      Common questions answered","choice":"faq","id":null,"timestamp":1774475455527}
+{"source":"user-event","type":"click","text":"8\n    \n      Footer CTA + links\n      Final \"Start for free\" push + nav links, social, legal","choice":"footer","id":null,"timestamp":1774475456969}
+{"type":"screen-added","file":"/Users/hidranarias/projects/ai/claude-code/landing-page/.superpowers/brainstorm/36729-1774475288/approaches.html"}
+{"source":"user-event","type":"click","text":"FluentAiPro\n        \n        Learn any languagewith AI tutors\n        \n          Start for free →\n        \n      \n    \n    \n      A — Glassmorphism\n      Dark canvas with frosted-glass cards, purple-to-cyan gradient accents, ambient glow blobs. Feels futuristic and premium — like a top-tier SaaS product.\n      ↑ Recommend","choice":"a","id":null,"timestamp":1774475647849}
+{"type":"screen-added","file":"/Users/hidranarias/projects/ai/claude-code/landing-page/.superpowers/brainstorm/36729-1774475288/hero-design.html"}
+{"type":"screen-added","file":"/Users/hidranarias/projects/ai/claude-code/landing-page/.superpowers/brainstorm/36729-1774475288/hero-design-v2.html"}
+{"type":"screen-added","file":"/Users/hidranarias/projects/ai/claude-code/landing-page/.superpowers/brainstorm/36729-1774475288/features-design.html"}
+{"type":"screen-added","file":"/Users/hidranarias/projects/ai/claude-code/landing-page/.superpowers/brainstorm/36729-1774475288/features-design-v2.html"}
+{"type":"screen-added","file":"/Users/hidranarias/projects/ai/claude-code/landing-page/.superpowers/brainstorm/36729-1774475288/social-pricing.html"}
+{"type":"screen-added","file":"/Users/hidranarias/projects/ai/claude-code/landing-page/.superpowers/brainstorm/36729-1774475288/pricing-v2.html"}
+{"type":"screen-added","file":"/Users/hidranarias/projects/ai/claude-code/landing-page/.superpowers/brainstorm/36729-1774475288/waiting.html"}
+{"type":"server-stopped","reason":"idle timeout"}
