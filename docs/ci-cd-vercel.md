@@ -30,7 +30,7 @@ Open PR       →  Test  →  Deploy Preview URL
 
 1. Go to [vercel.com](https://vercel.com) and sign in
 2. Click **Add New → Project**
-3. Import your GitHub repo `hidran/fluentaipro-calude-andingpage`
+3. Import your GitHub repo `hidran/fluentaipro-claude-andingpage`
 4. Framework: **Vite** (auto-detected)
 5. Build command: `npm run build`
 6. Output directory: `dist`

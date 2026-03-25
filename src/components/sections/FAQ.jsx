@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react'
+import { useState } from 'react'
 
 const FAQS = [
   {
@@ -29,7 +29,6 @@ const FAQS = [
 
 function FAQItem({ question, answer }) {
   const [open, setOpen] = useState(false)
-  const contentRef = useRef(null)
   const id = `faq-${question.slice(0, 20).replace(/\s+/g, '-').toLowerCase()}`
 
   return (
@@ -45,10 +44,9 @@ function FAQItem({ question, answer }) {
       </button>
       <div
         id={id}
-        ref={contentRef}
         className="faq__answer"
         style={{
-          maxHeight: open ? `${contentRef.current?.scrollHeight ?? 500}px` : '0px',
+          maxHeight: open ? '500px' : '0px',
           overflow: 'hidden',
           transition: 'max-height 0.3s ease',
         }}
