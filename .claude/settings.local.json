@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(/Users/hidranarias/.claude/plugins/cache/superpowers-marketplace/superpowers/5.0.5/skills/brainstorming/scripts/start-server.sh --project-dir /Users/hidranarias/projects/ai/claude-code/landing-page)",
+      "Bash(npm create:*)",
+      "Bash(printf \"y\\\\n\")",
+      "Bash(npx create-vite@latest . --template react)",
+      "Bash(yes)",
+      "Bash(npm install:*)",
+      "Bash(npm run:*)",
+      "Bash(node:*)",
+      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); pkgs=d.get\\(''''packages'''',{}\\); items={k:v.get\\(''''version'''',''''''''\\) for k,v in pkgs.items\\(\\) if k in [''''node_modules/react'''',''''node_modules/vite'''',''''node_modules/vitest'''',''''node_modules/tailwindcss'''',''''node_modules/@tailwindcss/vite'''']}; [print\\(f''''{k}: {v}''''\\) for k,v in items.items\\(\\)]\")",
+      "Bash(npx vite:*)",
+      "Bash(npx vitest:*)",
+      "Bash(printf:*)",
+      "Bash(grep:*)",
+      "Bash(npx firebase-tools:*)",
+      "Skill(commit-commands:commit-push-pr)"
+    ]
+  }
+}
