@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hero Design Preview</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #111; color: white; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+
+  .page-label {
+    text-align: center;
+    padding: 12px;
+    background: rgba(255,255,255,0.05);
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+
+  /* NAV */
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 48px;
+    background: rgba(10,10,15,0.8);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .logo { font-size: 15px; font-weight: 700; background: linear-gradient(135deg,#7c3aed,#06b6d4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+  .nav-links { display: flex; gap: 28px; }
+  .nav-links a { color: rgba(255,255,255,0.55); font-size: 13px; text-decoration: none; }
+  .nav-links a:hover { color: white; }
+  .nav-cta { background: linear-gradient(135deg,#7c3aed,#06b6d4); border-radius: 8px; padding: 8px 18px; font-size: 13px; font-weight: 600; color: white; text-decoration: none; }
+
+  /* HERO */
+  .hero {
+    position: relative;
+    background: #0a0a0f;
+    padding: 100px 48px 80px;
+    text-align: center;
+    overflow: hidden;
+    min-height: 520px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .glow-1 { position: absolute; top: -80px; left: -80px; width: 400px; height: 400px; background: radial-gradient(circle, rgba(124,58,237,0.25), transparent 70%); border-radius: 50%; }
+  .glow-2 { position: absolute; bottom: -80px; right: -60px; width: 350px; height: 350px; background: radial-gradient(circle, rgba(6,182,212,0.2), transparent 70%); border-radius: 50%; }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(124,58,237,0.15);
+    border: 1px solid rgba(124,58,237,0.4);
+    border-radius: 20px;
+    padding: 5px 14px;
+    font-size: 12px;
+    color: #a78bfa;
+    margin-bottom: 28px;
+    position: relative;
+    z-index: 1;
+  }
+  .badge-dot { width: 6px; height: 6px; background: #7c3aed; border-radius: 50%; animation: pulse 2s infinite; }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+
+  h1 {
+    font-size: 54px;
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -1.5px;
+    color: white;
+    max-width: 700px;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+  }
+  h1 .gradient-text {
+    background: linear-gradient(135deg, #7c3aed, #06b6d4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .subtitle {
+    font-size: 18px;
+    color: rgba(255,255,255,0.5);
+    max-width: 500px;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    position: relative;
+    z-index: 1;
+  }
+  .hero-actions {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .btn-primary {
+    background: linear-gradient(135deg,#7c3aed,#06b6d4);
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 14px 30px;
+    border-radius: 10px;
+    text-decoration: none;
+    box-shadow: 0 0 30px rgba(124,58,237,0.4);
+  }
+  .btn-secondary {
+    color: rgba(255,255,255,0.6);
+    font-size: 14px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .stats {
+    display: flex;
+    gap: 40px;
+    margin-top: 56px;
+    position: relative;
+    z-index: 1;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .stat-item { text-align: center; }
+  .stat-number { font-size: 26px; font-weight: 700; background: linear-gradient(135deg,#7c3aed,#06b6d4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+  .stat-label { font-size: 12px; color: rgba(255,255,255,0.4); margin-top: 2px; }
+  .stat-divider { width: 1px; background: rgba(255,255,255,0.1); align-self: stretch; }
+</style>
+</head>
+<body>
+<div class="page-label">Hero section preview — FluentAiPro landing page</div>
+
+<nav>
+  <div class="logo">FluentAiPro</div>
+  <div class="nav-links">
+    <a href="#">Features</a>
+    <a href="#">Languages</a>
+    <a href="#">Pricing</a>
+  </div>
+  <a href="#" class="nav-cta">Start for free</a>
+</nav>
+
+<section class="hero">
+  <div class="glow-1"></div>
+  <div class="glow-2"></div>
+
+  <div class="badge">
+    <span class="badge-dot"></span>
+    AI-Powered Language Learning
+  </div>
+
+  <h1>Learn any language<br>with your <span class="gradient-text">AI tutor</span></h1>
+
+  <p class="subtitle">
+    Practice real conversations in 50+ languages. Get instant pronunciation feedback and a learning path that adapts to you.
+  </p>
+
+  <div class="hero-actions">
+    <a href="#" class="btn-primary">Start for free →</a>
+    <a href="#" class="btn-secondary">▶ See how it works</a>
+  </div>
+
+  <div class="stats">
+    <div class="stat-item">
+      <div class="stat-number">50+</div>
+      <div class="stat-label">Languages</div>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-item">
+      <div class="stat-number">10M+</div>
+      <div class="stat-label">Conversations</div>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-item">
+      <div class="stat-number">98%</div>
+      <div class="stat-label">Accuracy Rate</div>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-item">
+      <div class="stat-number">4.9★</div>
+      <div class="stat-label">User Rating</div>
+    </div>
+  </div>
+</section>
+</body>
+</html>
